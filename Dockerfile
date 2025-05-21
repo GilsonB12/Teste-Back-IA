@@ -1,6 +1,5 @@
 FROM python:3.10
 
-# Instala dependências do sistema
 RUN apt-get update && apt-get install -y \
     tesseract-ocr \
     poppler-utils \
