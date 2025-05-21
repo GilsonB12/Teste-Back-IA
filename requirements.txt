@@ -1,0 +1,8 @@
+flask
+flask-pymongo
+pytesseract
+pillow
+transformers
+torch
+flasgger
+pdf2image
