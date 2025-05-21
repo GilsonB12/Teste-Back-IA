@@ -6,7 +6,7 @@ Este projeto é uma aplicação Flask que permite:
 - 🔍 Realizar OCR com Tesseract para extrair o texto
 - 📃 Gerar sumários automáticos usando LLMs da Hugging Face
 - ❓ Responder perguntas como “Qual currículo é mais adequado para a vaga de Engenheiro de Software?”
-- 💾 Registrar logs no MongoDB (sem armazenar os arquivos)
+- 💾 Registrar logs no MongoDB
 
 ---
 
