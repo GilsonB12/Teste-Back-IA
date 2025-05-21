@@ -10,16 +10,14 @@ Este projeto é uma aplicação Flask que permite:
 
 ---
 
-## ⚠️ Aviso importante
+## ⚠️ Aviso importante sobre limitações técnicas
 
-> 💻 Este projeto foi desenvolvido em uma máquina **sem GPU** e com **recursos limitados (pouca RAM e CPU fraca)**.  
-> Por isso:
-> - Os modelos utilizados são leves (`facebook/bart-large-cnn` e `google/flan-t5-base`)
-> - O número de tokens foi reduzido para evitar estouros de memória ou travamentos
-> - O desempenho pode ser baixo, mas funcional para testes e desenvolvimento local
+- **Máquina com CPU limitada e sem GPU**
+- Modelos utilizados são leves e simplificados (`facebook/bart-large-cnn` e `google/flan-t5-base`)
+- O limite de tokens para geração é baixo para evitar travamentos e estouros de memória
+- Por isso, **recomendamos testar no máximo 2 arquivos por vez**, apesar da API aceitar múltiplos arquivos
 
 ---
-
 ## ✅ Pré-requisitos
 
 - Docker instalado
@@ -38,5 +36,36 @@ Coloque os arquivos do projeto (código Python, Dockerfile, docker-compose.yml, 
 No terminal, dentro da pasta do projeto:
 
 ```bash
+docker-compose build
+```
+
+```bash
+docker-compose up
+```
+ou 
+
+```bash
 docker-compose up --build
-acesse http://localhost:5000/apidocs
+```
+
+### 3. Acesse a documentação interativa da API (Swagger UI)
+
+Quando os dois containers estiverem iniciados acesse:
+
+http://localhost:5000/apidocs/
+
+
+### 3. Teste na interface Swagger
+
+Teste a API enviando currículos
+Na interface Swagger:
+
+Use o campo files para selecionar arquivos (PDF ou imagens PNG/JPEG)
+
+Informe um request_id válido (exemplo UUID: 123e4567-e89b-12d3-a456-426614174000)
+
+Informe seu user_id (ex: fabio)
+
+Opcionalmente, insira uma query para perguntar sobre os currículos (ex: "Qual currículo é melhor para Engenheiro de Software?")
+
+Clique em "Try it out" para enviar e ver a resposta da API
